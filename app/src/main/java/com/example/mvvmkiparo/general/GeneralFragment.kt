@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.room.Room
 import com.example.mvvmkiparo.R
 import com.example.mvvmkiparo.databinding.FragmentGeneralBinding
+import com.example.mvvmkiparo.repository.UserDB
 
 
 class GeneralFragment : Fragment() {
@@ -21,6 +23,7 @@ class GeneralFragment : Fragment() {
     private lateinit var binding: FragmentGeneralBinding
     private val generalViewModel: GeneralViewModel by viewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,17 +31,23 @@ class GeneralFragment : Fragment() {
     ): View? {
 
         binding = FragmentGeneralBinding.inflate(layoutInflater, container, false)
-        generalViewModel
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        generalViewModel.resultLive.observe(viewLifecycleOwner) { text ->
+            binding.button.text = text
+
+        }
         binding.switchGeneralNext.setOnClickListener {
+            generalViewModel.setNext()
             binding.switchGeneralBack.isChecked = false
             binding.switchGeneralNext.isChecked = true
         }
         binding.switchGeneralBack.setOnClickListener {
+            generalViewModel.setBack()
             binding.switchGeneralBack.isChecked = true
             binding.switchGeneralNext.isChecked = false
         }

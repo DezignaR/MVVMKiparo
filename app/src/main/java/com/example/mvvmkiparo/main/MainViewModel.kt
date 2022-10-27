@@ -6,11 +6,11 @@ import androidx.lifecycle.ViewModel
 class MainViewModel:ViewModel() {
 
     init {
-        Log.e("ААА", "VM createt")
+        Log.e("ААА", "VM Main created")
     }
 
     override fun onCleared() {
-        Log.e("AAA","VM Cleared")
+        Log.e("AAA","VM Main Cleared")
         super.onCleared()
     }
 

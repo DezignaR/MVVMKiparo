@@ -1,7 +1,15 @@
 package com.example.mvvmkiparo.second
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class SecondViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    init {
+        Log.e("ААА", "VM Second created")
+    }
+
+    override fun onCleared() {
+        Log.e("AAA","VM Second Cleared")
+        super.onCleared()
+    }
 }

@@ -28,13 +28,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        mainViewModel
+
         super.onViewCreated(view, savedInstanceState)
+        mainViewModel
         binding.buttonPush.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_mainFragment_to_generalFragment)
         }

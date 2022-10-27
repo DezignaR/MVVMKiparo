@@ -24,13 +24,14 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentSecondBinding.inflate(layoutInflater, container, false)
-        secondViewModel
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        secondViewModel
         binding.button2.setOnClickListener { view ->
             if (binding.checkBoxSecond.isChecked)
                 view.findNavController().navigate(R.id.action_secondFragment_to_mainFragment)

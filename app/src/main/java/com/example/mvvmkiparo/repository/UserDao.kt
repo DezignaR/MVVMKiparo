@@ -1,7 +1,7 @@
 package com.example.mvvmkiparo.repository
 
 import androidx.room.*
-
+@Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(userEntity: UserEntity)
