@@ -1,4 +1,4 @@
-package com.example.mvvmkiparo.general
+package com.example.mvvmkiparo.presentation.general
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import androidx.room.Room
 import com.example.mvvmkiparo.R
 import com.example.mvvmkiparo.databinding.FragmentGeneralBinding
-import com.example.mvvmkiparo.repository.UserDB
 
 
 class GeneralFragment : Fragment() {

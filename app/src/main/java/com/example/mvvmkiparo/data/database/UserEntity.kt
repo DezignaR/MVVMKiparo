@@ -1,4 +1,4 @@
-package com.example.mvvmkiparo.repository
+package com.example.mvvmkiparo.data.database
 
 
 import android.os.Parcel

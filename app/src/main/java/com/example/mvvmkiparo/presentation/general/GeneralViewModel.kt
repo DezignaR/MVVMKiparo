@@ -1,9 +1,8 @@
-package com.example.mvvmkiparo.general
+package com.example.mvvmkiparo.presentation.general
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlin.random.Random
 
 class GeneralViewModel : ViewModel() {
     init {

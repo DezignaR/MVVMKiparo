@@ -1,4 +1,4 @@
-package com.example.mvvmkiparo.second
+package com.example.mvvmkiparo.presentation.second
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
