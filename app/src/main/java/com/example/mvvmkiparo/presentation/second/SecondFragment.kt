@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.mvvmkiparo.R
 import com.example.mvvmkiparo.databinding.FragmentSecondBinding
+import com.google.android.material.navigation.NavigationBarView
 
 class SecondFragment : Fragment() {
 
@@ -38,6 +40,23 @@ class SecondFragment : Fragment() {
             else
                 view.findNavController().navigate(R.id.action_secondFragment_to_generalFragment)
         }
-    }
 
+        binding.topAppBar.setNavigationOnClickListener {
+            binding.topAppBar.isVisible = false
+            binding.navigationRail.isVisible = true
+
+        }
+        binding.navigationRail.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.stopwatch -> {
+                    binding.topAppBar.isVisible = true
+                    binding.navigationRail.isVisible = false
+                    true
+                }
+                else -> false
+            }
+        }
+    }
 }
+
+

@@ -24,11 +24,5 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
 
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.container, MainFragment())
-//            .setReorderingAllowed(true)
-//            .addToBackStack("Main")
-//            .commit()
-
     }
 }
