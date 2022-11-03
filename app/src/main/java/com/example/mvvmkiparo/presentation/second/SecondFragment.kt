@@ -42,14 +42,19 @@ class SecondFragment : Fragment() {
         }
 
         binding.topAppBar.setNavigationOnClickListener {
-            binding.topAppBar.isVisible = false
-            binding.navigationRail.isVisible = true
-
+            if (binding.navigationRail.isVisible) {
+                binding.navigationRail.isVisible = false
+                binding.topAppBar.setNavigationIcon(R.drawable.ic_down_circle)
+            } else {
+                binding.navigationRail.isVisible = true
+                binding.topAppBar.setNavigationIcon(R.drawable.ic_left)
+            }
         }
+
         binding.navigationRail.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.stopwatch -> {
-                    binding.topAppBar.isVisible = true
+                    // binding.topAppBar.isVisible = true
                     binding.navigationRail.isVisible = false
                     true
                 }
