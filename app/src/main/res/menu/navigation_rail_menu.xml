@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/alarms"
+        android:id="@+id/edit"
         android:enabled="true"
-        android:icon="@drawable/ic_icons8"
-        android:title="icon"/>
+        android:icon="@drawable/ic_edit"
+        android:title="Добавить запись"/>
     <item
-        android:id="@+id/schedule"
+        android:id="@+id/document"
         android:enabled="true"
-        android:icon="@drawable/ic_icons8"
-        android:title="icon"/>
+        android:icon="@drawable/ic_document"
+        android:title="Записи"/>
     <item
-        android:id="@+id/timer"
+        android:id="@+id/setting"
         android:enabled="true"
-        android:icon="@drawable/ic_icons8"
-        android:title="icon"/>
+        android:icon="@drawable/ic_setting"
+        android:title="Настройки"/>
     <item
-        android:id="@+id/stopwatch"
+        android:id="@+id/watch"
         android:enabled="true"
-        android:icon="@drawable/ic_left"
-        android:title="Back"/>
+        android:icon="@drawable/ic_watch"
+        android:title="Добавить время"/>
 </menu>
