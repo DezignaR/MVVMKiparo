@@ -30,9 +30,9 @@ import java.util.*
 )
 data class ServiceRendered(
     @PrimaryKey(autoGenerate = true) @SerializedName("id_serviceRendered") var id_serviceRendered: Int,
-    @ColumnInfo(name = "client_id") @SerializedName("client_id") var client_id: Int,
-    @ColumnInfo(name = "service_id") @SerializedName("service_id") var service_id: Int,
-    @ColumnInfo(name = "priceCondition_id") @SerializedName("priceCondition_id") var priceCondition_id: Int,
+    @ColumnInfo(name = "client_id", index = true) @SerializedName("client_id") var client_id: Int,
+    @ColumnInfo(name = "service_id", index = true) @SerializedName("service_id") var service_id: Int,
+    @ColumnInfo(name = "priceCondition_id", index = true) @SerializedName("priceCondition_id") var priceCondition_id: Int,
     @ColumnInfo(name = "time") @SerializedName("time") var time: Date?
 ):Parcelable {
     constructor(parcel: Parcel) : this(
