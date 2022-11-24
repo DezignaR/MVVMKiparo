@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.e("AAA", "Activity created")
+        //Log.e("AAA", "Activity created")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)

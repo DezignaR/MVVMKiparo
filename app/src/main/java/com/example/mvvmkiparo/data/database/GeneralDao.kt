@@ -1,57 +1,61 @@
 package com.example.mvvmkiparo.data.database
 
 import androidx.room.*
+import com.example.mvvmkiparo.data.entity.ClientEntity
+import com.example.mvvmkiparo.data.entity.PriceConditionEntity
+import com.example.mvvmkiparo.data.entity.ServiceEntity
+import com.example.mvvmkiparo.data.entity.ServiceRenderedEntity
 import java.util.*
 
 @Dao
 interface GeneralDao {
     //Client
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertClient(client: Client)
+    fun insertClient(clientEntity: ClientEntity)
     @Delete
-    fun deleteClient(client: Client)
+    fun deleteClient(clientEntity: ClientEntity)
     @Update
-    fun updateClient(client: Client)
+    fun updateClient(clientEntity: ClientEntity)
     @Query("SELECT * FROM client WHERE id_client = :id_client")
-    fun getClientById(id_client:Int): Client
+    fun getClientById(id_client:Int): ClientEntity
     @Query("SELECT * FROM client")
-    fun getClientAll():List<Client>
+    fun getClientAll():List<ClientEntity>
 
     //Service
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertService(service: Service)
+    fun insertService(serviceEntity: ServiceEntity)
     @Delete
-    fun deleteService(service: Service)
+    fun deleteService(serviceEntity: ServiceEntity)
     @Update
-    fun updateService(service: Service)
+    fun updateService(serviceEntity: ServiceEntity)
     @Query("SELECT * FROM service WHERE id_service = :id_service")
-    fun getServiceById(id_service:Int): Service
+    fun getServiceById(id_service:Int): ServiceEntity
     @Query("SELECT * FROM service")
-    fun getServiceAll():List<Service>
+    fun getServiceAll():List<ServiceEntity>
 
     //PriceCondition
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertPriceCondition(priceCondition: PriceCondition)
+    fun insertPriceCondition(priceConditionEntity: PriceConditionEntity)
     @Delete
-    fun deletePriceCondition(priceCondition: PriceCondition)
+    fun deletePriceCondition(priceConditionEntity: PriceConditionEntity)
     @Update
-    fun updatePriceCondition(priceCondition: PriceCondition)
+    fun updatePriceCondition(priceConditionEntity: PriceConditionEntity)
     @Query("SELECT * FROM priceCondition WHERE id_priceCondition = :id_priceCondition")
-    fun getPriceConditionById(id_priceCondition:Int): PriceCondition
+    fun getPriceConditionById(id_priceCondition:Int): PriceConditionEntity
     @Query("SELECT * FROM priceCondition")
-    fun getPriceConditionAll():List<PriceCondition>
+    fun getPriceConditionAll():List<PriceConditionEntity>
 
     //ServiceRendered
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertServiceRendered(serviceRendered: ServiceRendered)
+    fun insertServiceRendered(serviceRenderedEntity: ServiceRenderedEntity)
     @Delete
-    fun deleteServiceRendered(serviceRendered: ServiceRendered)
+    fun deleteServiceRendered(serviceRenderedEntity: ServiceRenderedEntity)
     @Update
-    fun updateServiceRendered(serviceRendered: ServiceRendered)
+    fun updateServiceRendered(serviceRenderedEntity: ServiceRenderedEntity)
     @Query("SELECT * FROM serviceRendered WHERE id_serviceRendered = :id_serviceRendered")
-    fun getServiceRenderedById(id_serviceRendered:Int): ServiceRendered
+    fun getServiceRenderedById(id_serviceRendered:Int): ServiceRenderedEntity
     @Query("SELECT * FROM serviceRendered")
-    fun getServiceRenderedAll():List<ServiceRendered>
+    fun getServiceRenderedAll():List<ServiceRenderedEntity>
 }
 
 class DateConverter {

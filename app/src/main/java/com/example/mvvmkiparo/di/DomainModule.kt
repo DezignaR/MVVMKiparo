@@ -1,36 +1,32 @@
 package com.example.mvvmkiparo.di
 
-import android.content.Context
-import com.example.mvvmkiparo.domain.DeleteUserUseCase
-import com.example.mvvmkiparo.domain.GetAllUsersUseCase
-import com.example.mvvmkiparo.domain.GetUserByIdUseCase
-import com.example.mvvmkiparo.domain.InsertUserUseCase
+import com.example.mvvmkiparo.data.database.GeneralDB
+import com.example.mvvmkiparo.domain.usecase.DeleteUserUseCase
+import com.example.mvvmkiparo.domain.usecase.GetAllUsersUseCase
+import com.example.mvvmkiparo.domain.usecase.GetUserByIdUseCase
+import com.example.mvvmkiparo.domain.usecase.InsertUserUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
 
 @Module
 @InstallIn(ViewModelComponent::class)
 class DomainModule {
 
     @Provides
-    fun provideDeleteUserUseCase(@ApplicationContext context: Context): DeleteUserUseCase {
-        return DeleteUserUseCase(context = context)
-    }
-    @Provides
-    fun provideGetAllUserUseCase(@ApplicationContext context: Context): GetAllUsersUseCase {
-        return GetAllUsersUseCase(context = context)
-    }
+    fun provideDeleteUserUseCase(generalDB: GeneralDB): DeleteUserUseCase =
+        DeleteUserUseCase(generalDB)
 
     @Provides
-    fun provideGetUserByIdUseCase(@ApplicationContext context: Context): GetUserByIdUseCase {
-        return GetUserByIdUseCase(context = context)
-    }
+    fun provideGetAllUserUseCase(generalDB: GeneralDB): GetAllUsersUseCase =
+        GetAllUsersUseCase(generalDB)
 
     @Provides
-    fun provideInsertUserUseCase(@ApplicationContext context: Context): InsertUserUseCase {
-        return InsertUserUseCase(context = context)
-    }
+    fun provideGetUserByIdUseCase(generalDB: GeneralDB): GetUserByIdUseCase =
+        GetUserByIdUseCase(generalDB)
+
+    @Provides
+    fun provideInsertUserUseCase(generalDB: GeneralDB): InsertUserUseCase =
+        InsertUserUseCase(generalDB)
 }

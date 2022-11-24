@@ -2,8 +2,11 @@ package com.example.mvvmkiparo.presentation.main
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel:ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor():ViewModel() {
 
     init {
         Log.e("ААА", "VM Main created")
